@@ -1,0 +1,513 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#170d1b">
+  <title>Mommies, Daddies & Young Adults | Kenya</title>
+  <meta name="description" content="Meet mature singles and young adults seeking chemistry, companionship and meaningful connections in Kenya. Adults 18+ only.">
+
+  <style>
+    :root {
+      --bg: #130b17;
+      --panel: #211427;
+      --pink: #ff76b7;
+      --gold: #f4d18a;
+      --white: #fff7fc;
+      --muted: #c7b4cb;
+      --green: #25d366;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      background: var(--bg);
+      color: var(--white);
+      font-family: Arial, Helvetica, sans-serif;
+      line-height: 1.6;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .container {
+      width: min(1100px, 92%);
+      margin: auto;
+    }
+
+    header {
+      background: #1b1020;
+      border-bottom: 1px solid #442641;
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+
+    .navbar {
+      min-height: 76px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 15px;
+    }
+
+    .logo {
+      color: var(--pink);
+      font-size: 1.15rem;
+      font-weight: 900;
+      letter-spacing: 1px;
+    }
+
+    nav {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 18px;
+      font-size: .9rem;
+    }
+
+    nav a:hover {
+      color: var(--gold);
+    }
+
+    .hero {
+      padding: 65px 0 55px;
+      text-align: center;
+      background:
+        radial-gradient(ellipse at top, #552443 0%, transparent 65%);
+    }
+
+    .eyebrow {
+      color: var(--gold);
+      font-size: .8rem;
+      font-weight: bold;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+    }
+
+    h1 {
+      font-size: clamp(2.3rem, 7vw, 4.5rem);
+      line-height: 1.12;
+      margin: 20px 0;
+    }
+
+    h1 span {
+      color: var(--pink);
+    }
+
+    .hero p {
+      color: var(--muted);
+      max-width: 650px;
+      margin: 0 auto 26px;
+    }
+
+    .button {
+      display: inline-block;
+      padding: 13px 23px;
+      border-radius: 9px;
+      font-weight: bold;
+      transition: transform .2s, opacity .2s;
+    }
+
+    .button:hover {
+      transform: translateY(-2px);
+      opacity: .9;
+    }
+
+    .button-primary {
+      background: linear-gradient(110deg, #ff76b7, #e9a1d7);
+      color: #24101f;
+    }
+
+    .button-whatsapp {
+      background: var(--green);
+      color: #062c14;
+    }
+
+    .button-outline {
+      border: 1px solid #a85b89;
+      color: var(--pink);
+    }
+
+    section {
+      padding: 48px 0;
+    }
+
+    .section-heading {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+
+    .section-heading h2 {
+      font-size: clamp(1.7rem, 4vw, 2.5rem);
+      margin-bottom: 7px;
+    }
+
+    .section-heading p {
+      color: var(--muted);
+    }
+
+    .categories {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+    }
+
+    .category {
+      background: var(--panel);
+      border: 1px solid #492641;
+      padding: 25px 15px;
+      border-radius: 15px;
+      text-align: center;
+    }
+
+    .category .emoji {
+      font-size: 2rem;
+      margin-bottom: 8px;
+    }
+
+    .category h3 {
+      color: var(--gold);
+      margin-bottom: 5px;
+    }
+
+    .category p {
+      color: var(--muted);
+      font-size: .9rem;
+    }
+
+    .profiles {
+      background: #190f1e;
+    }
+
+    .profile-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 20px;
+    }
+
+    .profile-card {
+      background: var(--panel);
+      border: 1px solid #492641;
+      border-radius: 15px;
+      overflow: hidden;
+      transition: transform .2s;
+    }
+
+    .profile-card:hover {
+      transform: translateY(-4px);
+    }
+
+    /* REAL UPLOADED PROFILE PHOTOS */
+    .profile-photo {
+      width: 100%;
+      height: 310px;
+      display: block;
+      object-fit: cover;
+      object-position: center;
+      background: #302036;
+    }
+
+    .profile-info {
+      padding: 19px;
+    }
+
+    .profile-info h3 {
+      font-size: 1.25rem;
+    }
+
+    .profile-meta {
+      color: var(--gold);
+      font-size: .88rem;
+      margin: 3px 0 10px;
+    }
+
+    .profile-info p {
+      color: var(--muted);
+      font-size: .94rem;
+      margin-bottom: 17px;
+    }
+
+    .profile-info .button {
+      width: 100%;
+      text-align: center;
+    }
+
+    .notice {
+      border: 1px solid #59334f;
+      background: #211427;
+      padding: 22px;
+      border-radius: 13px;
+      color: var(--muted);
+      text-align: center;
+    }
+
+    .notice strong {
+      color: var(--pink);
+    }
+
+    .join {
+      text-align: center;
+      background: radial-gradient(ellipse at bottom, #48203c, transparent 70%);
+    }
+
+    .join p {
+      color: var(--muted);
+      max-width: 600px;
+      margin: 12px auto 24px;
+    }
+
+    footer {
+      padding: 27px 0;
+      border-top: 1px solid #442641;
+      color: var(--muted);
+      font-size: .85rem;
+      text-align: center;
+    }
+
+    footer p + p {
+      margin-top: 7px;
+    }
+
+    @media (max-width: 760px) {
+      .navbar {
+        padding: 14px 0;
+        flex-direction: column;
+      }
+
+      nav {
+        justify-content: center;
+        gap: 14px;
+      }
+
+      .categories {
+        grid-template-columns: 1fr;
+      }
+
+      .profile-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 12px;
+      }
+
+      .profile-photo {
+        height: 230px;
+      }
+
+      .profile-info {
+        padding: 13px;
+      }
+    }
+
+    @media (max-width: 420px) {
+      .profile-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .profile-photo {
+        height: 350px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <div class="container navbar">
+    <a class="logo" href="#">♥ MOMMIES & DADDIES</a>
+    <nav>
+      <a href="#home">Home</a>
+      <a href="#categories">Explore</a>
+      <a href="#profiles">Profiles</a>
+      <a href="#join">Join Us</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <section class="hero" id="home">
+    <div class="container">
+      <div class="eyebrow">Kenya's Grown-Up Dating Space · 18+</div>
+
+      <h1>Sweet Talk.<br><span>Real Chemistry.</span></h1>
+
+      <p>
+        Looking for someone who knows how to make you smile,
+        keep you intrigued and turn an ordinary conversation
+        into the highlight of your day?
+        Darling, you might just be in the right place.
+      </p>
+
+      <a class="button button-primary" href="#profiles">
+        Meet Your Next Connection ♥
+      </a>
+    </div>
+  </section>
+
+  <section id="categories">
+    <div class="container">
+      <div class="section-heading">
+        <h2>Who Caught Your Eye? 😉</h2>
+        <p>Different personalities. Different stories. One place to connect.</p>
+      </div>
+
+      <div class="categories">
+        <article class="category">
+          <div class="emoji">👑</div>
+          <h3>Mommies</h3>
+          <p>Confident, charming mature women with their own sparkle.</p>
+        </article>
+
+        <article class="category">
+          <div class="emoji">🥂</div>
+          <h3>Daddies</h3>
+          <p>Distinguished, charismatic mature men ready to meet someone new.</p>
+        </article>
+
+        <article class="category">
+          <div class="emoji">💋</div>
+          <h3>Young Adults</h3>
+          <p>Adults with big personalities, playful energy and open minds.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="profiles" id="profiles">
+    <div class="container">
+      <div class="section-heading">
+        <h2>A Little Temptation Never Hurt 😉</h2>
+        <p>Meet our featured adult members. Every introduction begins with consent.</p>
+      </div>
+
+      <div class="profile-grid">
+
+        <!-- PROFILE 1: Replace the photo path and details -->
+        <article class="profile-card">
+          <img
+            class="profile-photo"
+            src="images/mommy1.jpg"
+            alt="Featured adult member"
+            loading="lazy"
+          >
+          <div class="profile-info">
+            <h3>Miss Sunshine</h3>
+            <div class="profile-meta">Mommy · 35+ · Nairobi</div>
+            <p>
+              A warm smile, a playful spirit and conversations
+              that can keep you up a little later than planned.
+              Think you can match her energy?
+            </p>
+            <a class="button button-whatsapp"
+               href="https://wa.me/254762103221?text=Hello%2C%20I%27m%20interested%20in%20an%20introduction%20to%20Miss%20Sunshine."
+               target="_blank" rel="noopener noreferrer">
+              Request Introduction
+            </a>
+          </div>
+        </article>
+
+        <!-- PROFILE 2 -->
+        <article class="profile-card">
+          <img
+            class="profile-photo"
+            src="images/mommy2.jpg"
+            alt="Featured adult member"
+            loading="lazy"
+          >
+          <div class="profile-info">
+            <h3>Miss Elegance</h3>
+            <div class="profile-meta">Mommy · 30+ · Kenya</div>
+            <p>
+              Classy, confident and full of personality.
+              She believes a little laughter and genuine chemistry
+              make a beautiful beginning.
+            </p>
+            <a class="button button-whatsapp"
+               href="https://wa.me/254762103221?text=Hello%2C%20I%27m%20interested%20in%20an%20introduction%20to%20Miss%20Elegance."
+               target="_blank" rel="noopener noreferrer">
+              Request Introduction
+            </a>
+          </div>
+        </article>
+
+        <!-- PROFILE 3 -->
+        <article class="profile-card">
+          <img
+            class="profile-photo"
+            src="images/daddy1.jpg"
+            alt="Featured adult member"
+            loading="lazy"
+          >
+          <div class="profile-info">
+            <h3>Mr. Charming</h3>
+            <div class="profile-meta">Daddy · 40+ · Kenya</div>
+            <p>
+              Easygoing, thoughtful and always ready for
+              good conversation. Sometimes the best connection
+              starts with one simple hello.
+            </p>
+            <a class="button button-whatsapp"
+               href="https://wa.me/254762103221?text=Hello%2C%20I%27m%20interested%20in%20an%20introduction%20to%20Mr.%20Charming."
+               target="_blank" rel="noopener noreferrer">
+              Request Introduction
+            </a>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="container">
+      <div class="notice">
+        <strong>Real people. Real consent. Real respect.</strong>
+        <p>
+          This platform is for adults aged 18 and over.
+          Profiles and photos must be posted with the member's
+          permission. Never share another person's private
+          photos or contact details without consent.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="join" id="join">
+    <div class="container">
+      <div class="eyebrow">Your Story Could Start Here</div>
+      <h2>Single? Curious? Ready to Connect?</h2>
+      <p>
+        Tell us a little about yourself and the kind of adult
+        connection you're looking for. Our admin can help with
+        introductions, subject to everyone's consent.
+      </p>
+
+      <a class="button button-whatsapp"
+         href="https://wa.me/254762103221?text=Hello%2C%20I%27d%20like%20to%20join%20the%20Mommies%20and%20Daddies%20community."
+         target="_blank" rel="noopener noreferrer">
+        Chat With Our Admin on WhatsApp
+      </a>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="container">
+    <p>♥ Mommies & Daddies Kenya</p>
+    <p>Adults 18+ only · Respect · Privacy · Consent</p>
+    <p>Profiles are subject to member permission and verification.</p>
+  </div>
+</footer>
+
+</body>
+</html>
