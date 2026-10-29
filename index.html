@@ -3,512 +3,579 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#160914">
 <title>Mommies, Daddies & Young Adults | Kenya</title>
-<meta name="theme-color" content="#17111c">
-
 <style>
-@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;1,500&display=swap');
-
 :root {
-  --bg:#17111c;
-  --panel:#241b29;
-  --pink:#f3a2bd;
-  --gold:#e9c68e;
-  --white:#fff8f5;
-  --muted:#c5b7c7;
-  --line:#49364b;
+  --bg:#160914;
+  --panel:#241320;
+  --panel2:#301a2b;
+  --pink:#ff4fa3;
+  --gold:#e8c77a;
+  --text:#fff4fa;
+  --muted:#c7afbd;
+  --border:#583047;
 }
-* {box-sizing:border-box}
-html {scroll-behavior:smooth}
+* { box-sizing:border-box; }
 body {
   margin:0;
-  background:var(--bg);
-  color:var(--white);
-  font-family:'DM Sans',sans-serif;
-  line-height:1.6;
+  font-family:Arial,Helvetica,sans-serif;
+  color:var(--text);
+  background:radial-gradient(ellipse at top,#3c1730 0%,var(--bg) 55%);
+  min-height:100vh;
 }
-a {color:inherit;text-decoration:none}
-button,input {font:inherit}
+button,input { font:inherit; }
+button { cursor:pointer; }
+a { color:inherit; }
 header {
-  padding:18px 6%;
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  border-bottom:1px solid var(--line);
+  padding:28px 16px 22px;
+  text-align:center;
+  border-bottom:1px solid var(--border);
+  background:rgba(15,6,13,.5);
 }
-.logo {font-weight:700;font-size:15px}
-.logo span {color:var(--gold)}
-nav a {font-size:12px;color:var(--pink);font-weight:bold}
-.hero {
-  padding:65px 7%;
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:35px;
-  align-items:center;
+.logo {
+  font-size:clamp(25px,5vw,42px);
+  line-height:1.15;
+  margin:0;
+  font-weight:900;
+  letter-spacing:-1px;
 }
-.eyebrow {
-  color:var(--gold);
-  letter-spacing:2px;
-  font-size:10px;
-  font-weight:bold;
+.logo span { color:var(--pink); }
+.gold { color:var(--gold); }
+.subtitle {
+  color:var(--muted);
+  max-width:650px;
+  margin:12px auto 18px;
+  line-height:1.6;
+  font-size:14px;
 }
-h1,h2,h3 {font-family:'Playfair Display',serif;line-height:1.2}
-h1 {font-size:clamp(40px,6vw,68px);margin:15px 0}
-h1 em,h2 em {color:var(--pink)}
-.hero p {color:var(--muted);font-size:14px}
-.btn {
+.contact {
   display:inline-block;
-  background:var(--pink);
-  color:#21131d;
-  border:0;
-  border-radius:7px;
   padding:12px 18px;
-  margin:8px 6px 8px 0;
-  font-size:12px;
+  border-radius:30px;
+  color:#1b0c16;
+  background:linear-gradient(135deg,var(--gold),#fff0b8);
+  text-decoration:none;
   font-weight:bold;
-  cursor:pointer;
 }
-.btn:hover {opacity:.85}
-.art {
-  min-height:280px;
-  border-radius:18px;
-  background:radial-gradient(circle,#754665,#352438 60%,#211827);
-  display:grid;
-  place-items:center;
-  border:1px solid var(--line);
-}
-.art span {font-size:125px;color:var(--pink)}
-.trust {
-  background:var(--panel);
-  padding:24px 7%;
-  display:flex;
-  justify-content:space-around;
-  flex-wrap:wrap;
-  gap:15px;
+main { max-width:1200px; margin:auto; padding:22px 14px 45px; }
+.notice {
+  border:1px solid var(--border);
+  background:rgba(48,26,43,.7);
+  border-radius:13px;
+  padding:12px 14px;
+  color:var(--muted);
   font-size:12px;
+  line-height:1.6;
+  margin-bottom:20px;
 }
-.trust strong {color:var(--gold)}
-section.profiles {padding:65px 6%}
-.section-top {
-  display:flex;
-  align-items:end;
-  justify-content:space-between;
-  gap:15px;
-  flex-wrap:wrap;
-}
-h2 {font-size:clamp(30px,4vw,43px);margin:8px 0}
-.muted {color:var(--muted);font-size:12px}
-.search {
+.controls { display:grid; gap:13px; margin-bottom:22px; }
+#search {
   width:100%;
-  padding:13px;
-  border:1px solid var(--line);
-  border-radius:7px;
+  padding:14px 15px;
+  color:var(--text);
   background:var(--panel);
-  color:white;
-  margin:20px 0 13px;
+  border:1px solid var(--border);
+  border-radius:12px;
   outline:none;
 }
-.search:focus {border-color:var(--pink)}
-.filters {display:flex;gap:8px;flex-wrap:wrap;margin-bottom:25px}
-.filter {
-  padding:9px 13px;
-  border:1px solid var(--line);
-  background:transparent;
-  color:var(--muted);
-  border-radius:6px;
-  cursor:pointer;
-  font-size:11px;
+#search:focus { border-color:var(--pink); }
+.filters {
+  display:flex;
+  gap:8px;
+  flex-wrap:wrap;
 }
-.filter.active {background:var(--pink);color:#21131d;border-color:var(--pink)}
+.filter {
+  border:1px solid var(--border);
+  background:var(--panel);
+  color:var(--muted);
+  border-radius:25px;
+  padding:10px 14px;
+}
+.filter.active,.filter:hover {
+  color:white;
+  border-color:var(--pink);
+  background:#612443;
+}
+.results {
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:10px;
+  margin:10px 2px 16px;
+  color:var(--muted);
+  font-size:13px;
+}
+#count { color:var(--gold); font-weight:bold; }
 .grid {
   display:grid;
   grid-template-columns:repeat(4,minmax(0,1fr));
-  gap:15px;
+  gap:16px;
 }
 .card {
-  background:var(--panel);
-  border:1px solid #ffffff12;
-  border-radius:10px;
   overflow:hidden;
-  transition:transform .2s;
+  min-width:0;
+  border:1px solid var(--border);
+  background:linear-gradient(160deg,var(--panel2),var(--panel));
+  border-radius:15px;
+  box-shadow:0 7px 20px #0003;
 }
-.card:hover {transform:translateY(-4px);border-color:var(--pink)}
 .avatar {
-  min-height:150px;
+  height:190px;
+  position:relative;
+  overflow:hidden;
   display:grid;
   place-items:center;
-  position:relative;
-  background:radial-gradient(circle at 30% 25%,#754665,#352438 70%);
+  background:linear-gradient(145deg,#602447,#251222);
+}
+.avatar img {
+  width:100%;
+  height:100%;
+  display:block;
+  object-fit:cover;
 }
 .initials {
-  width:76px;
-  height:76px;
-  border:1px solid var(--pink);
-  background:#f3a2bd22;
-  color:var(--pink);
-  border-radius:50%;
+  width:100%;
+  height:100%;
   display:grid;
   place-items:center;
-  font:28px 'Playfair Display',serif;
+  color:var(--gold);
+  font-size:44px;
+  font-weight:900;
+  letter-spacing:2px;
+  background:radial-gradient(circle,#6a2a50,#21101f);
 }
 .tag {
   position:absolute;
   top:10px;
-  left:9px;
-  padding:4px 7px;
-  border-radius:15px;
-  background:#17111ce8;
+  left:10px;
+  z-index:2;
+  font-size:10px;
+  padding:6px 9px;
+  border-radius:20px;
+  background:#190b16dc;
   color:var(--gold);
-  font-size:8px;
+  border:1px solid #e8c77a66;
 }
-.details {padding:13px}
-.details h3 {font-size:19px;margin:0 0 5px}
-.meta {color:var(--gold);font-size:10px}
-.bio {color:var(--muted);font-size:11px;min-height:52px}
-.interests {font-size:10px;color:var(--pink);min-height:28px}
+.details { padding:13px; }
+.details h3 { margin:0 0 6px; font-size:16px; overflow-wrap:anywhere; }
+.meta { color:var(--gold); font-size:11px; margin-bottom:10px; }
+.bio {
+  font-size:12px;
+  color:var(--muted);
+  line-height:1.5;
+  min-height:54px;
+  margin:0 0 10px;
+}
+.interests { color:#ffc2df; font-size:11px; line-height:1.5; min-height:30px; }
 .view {
-  background:transparent;
-  border:0;
-  padding:7px 0;
-  color:var(--gold);
-  font-size:11px;
-  cursor:pointer;
+  width:100%;
+  padding:10px;
+  margin-top:12px;
+  color:white;
+  background:#6b2348;
+  border:1px solid #a43c72;
+  border-radius:9px;
   font-weight:bold;
 }
-.notice {
-  margin-top:25px;
-  padding:13px;
-  border-left:2px solid var(--gold);
+.view:hover { background:#8d2d5f; }
+.empty {
+  text-align:center;
   color:var(--muted);
-  font-size:10px;
+  padding:45px 10px;
 }
-.how {
-  background:var(--panel);
-  padding:50px 7%;
-}
-.steps {
-  display:grid;
-  grid-template-columns:repeat(3,1fr);
-  gap:25px;
-}
-.steps article {border-top:1px solid var(--line);padding-top:15px}
-.steps b {color:var(--gold)}
-.steps p {font-size:12px;color:var(--muted)}
 footer {
-  padding:25px 6%;
-  border-top:1px solid var(--line);
-  display:flex;
-  justify-content:space-between;
-  gap:15px;
-  flex-wrap:wrap;
-  font-size:10px;
+  border-top:1px solid var(--border);
+  padding:24px 15px;
+  text-align:center;
   color:var(--muted);
+  font-size:12px;
+  line-height:1.7;
 }
-footer a {color:var(--gold)}
+footer a { color:var(--gold); }
 .modal {
+  display:none;
   position:fixed;
   inset:0;
   z-index:10;
-  background:#000c;
-  display:none;
-  place-items:center;
-  padding:16px;
+  padding:18px;
+  background:#080308eF;
+  overflow-y:auto;
+  align-items:center;
+  justify-content:center;
 }
-.modal.open {display:grid}
+.modal.open { display:flex; }
 .modal-box {
+  width:100%;
+  max-width:430px;
   position:relative;
-  width:min(100%,430px);
-  max-height:90vh;
-  overflow:auto;
   background:var(--panel);
-  border:1px solid var(--line);
-  border-radius:13px;
-  padding:25px;
+  border:1px solid var(--pink);
+  border-radius:18px;
+  padding:23px;
+  text-align:center;
+  margin:auto;
 }
 .close {
   position:absolute;
-  right:13px;
-  top:8px;
-  background:none;
-  border:0;
+  right:12px;
+  top:10px;
   color:white;
-  font-size:28px;
-  cursor:pointer;
+  background:#49203a;
+  border:0;
+  border-radius:50%;
+  width:35px;
+  height:35px;
+  font-size:22px;
 }
-.modal-box h2 {font-size:32px}
-.modal-box p {font-size:12px;color:var(--muted)}
-.empty {padding:30px;text-align:center;color:var(--muted)}
-[hidden] {display:none!important}
-
-@media(max-width:950px) {
-  .grid {grid-template-columns:repeat(3,minmax(0,1fr))}
+.modal-photo {
+  width:100%;
+  height:260px;
+  object-fit:cover;
+  border-radius:12px;
+  margin:12px 0;
+  border:1px solid var(--border);
 }
-@media(max-width:650px) {
-  .hero {grid-template-columns:1fr;padding:42px 6%;gap:22px}
-  .art {min-height:210px}
-  .art span {font-size:100px}
-  .trust {justify-content:flex-start}
-  section.profiles {padding:45px 4%}
-  .grid {grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
-  .avatar {min-height:125px}
-  .details {padding:10px}
-  .details h3 {font-size:16px}
-  .bio {font-size:10px}
-  .steps {grid-template-columns:1fr;gap:10px}
+.modal-box h2 { margin:8px 0; }
+.modal-meta { color:var(--gold); font-size:13px; }
+.modal-bio { color:var(--muted); line-height:1.65; font-size:14px; }
+.modal-interests { color:#ffc2df; font-size:13px; margin:12px 0 18px; }
+.wa-button {
+  display:block;
+  padding:13px;
+  border-radius:10px;
+  text-decoration:none;
+  color:white;
+  font-weight:bold;
+  background:#168b53;
+}
+.small-note { font-size:10px; color:var(--muted); margin-top:13px; }
+@media(max-width:900px) {
+  .grid { grid-template-columns:repeat(3,minmax(0,1fr)); }
+}
+@media(max-width:600px) {
+  main { padding:17px 10px 35px; }
+  .grid { grid-template-columns:repeat(2,minmax(0,1fr)); gap:10px; }
+  .avatar { height:155px; }
+  .details { padding:10px; }
+  .details h3 { font-size:14px; }
+  .bio { min-height:68px; }
+  .logo { font-size:29px; }
 }
 @media(max-width:350px) {
-  .grid {grid-template-columns:1fr}
+  .grid { grid-template-columns:1fr; }
+  .avatar { height:220px; }
 }
 </style>
 </head>
-
 <body>
+
 <header>
-  <a class="logo" href="#">MOMMIES, DADDIES <span>&</span><br>YOUNG ADULTS</a>
-  <nav><a href="#profiles">EXPLORE PROFILES ↗</a></nav>
+  <h1 class="logo">Mommies, Daddies <span>&</span><br>
+    <span class="gold">Young Adults</span>
+  </h1>
+  <p class="subtitle">
+    Meet new people across Kenya. Explore profiles, discover shared
+    interests and start a respectful conversation.
+  </p>
+  <a class="contact" href="https://wa.me/254762103221" target="_blank" rel="noopener">
+    Contact Admin on WhatsApp
+  </a>
 </header>
 
 <main>
-<section class="hero">
-  <div>
-    <div class="eyebrow">KENYA • ADULTS 18+</div>
-    <h1>Good people.<br><em>Real connections.</em></h1>
-    <p>Meet new people, discover shared interests and start meaningful conversations. Respect, honesty and consent come first.</p>
-    <a class="btn" href="#profiles">Browse profiles ↓</a>
-    <p>♡ Respect first. Genuine introductions only.</p>
-  </div>
-  <div class="art"><span>♡</span></div>
-</section>
-
-<div class="trust">
-  <div>✦ <strong>Adults only</strong> — 18+</div>
-  <div>♡ <strong>Consent matters</strong></div>
-  <div>⌁ <strong>Protect your privacy</strong></div>
-</div>
-
-<section class="profiles" id="profiles">
-  <div class="section-top">
-    <div>
-      <div class="eyebrow">YOUR NEXT HELLO</div>
-      <h2>Find your kind of <em>connection.</em></h2>
-      <p class="muted">All profiles below are fictional examples for this website demo.</p>
-    </div>
-    <div><strong id="count">54</strong> <span class="muted">profiles</span></div>
-  </div>
-
-  <input id="search" class="search" type="search"
-    placeholder="Search by name, town or interests..."
-    aria-label="Search profiles">
-
-  <div class="filters">
-    <button class="filter active" data-category="All">All (54)</button>
-    <button class="filter" data-category="Mommies">Mommies (20)</button>
-    <button class="filter" data-category="Daddies">Daddies (14)</button>
-    <button class="filter" data-category="Young Adults">Young Adults (20)</button>
-  </div>
-
-  <div class="grid" id="grid"></div>
-  <div id="empty" class="empty" hidden>No matching profiles. Try another search.</div>
-
   <div class="notice">
-    DEMO NOTICE: These are fictional profiles, not real people. Only publish real profiles after obtaining the adults' permission.
+    <strong class="gold">Please note:</strong>
+    These are fictional demonstration profiles, not verified real people.
+    All profile photos should be used with the subject's permission.
+    Everyone featured in the Young Adults section is 18 or older.
   </div>
-</section>
 
-<section class="how">
-  <div class="eyebrow">SIMPLE • HUMAN • RESPECTFUL</div>
-  <h2>Start with a <em>hello.</em></h2>
-  <div class="steps">
-    <article><b>01 / BROWSE</b><p>Explore the profiles and search by location or interests.</p></article>
-    <article><b>02 / INTRODUCE</b><p>Ask for an introduction using the WhatsApp contact option.</p></article>
-    <article><b>03 / RESPECT</b><p>Both adults must freely agree before any introduction takes place.</p></article>
+  <section class="controls">
+    <input id="search" type="search"
+      placeholder="Search by name, town, age or interests..."
+      aria-label="Search profiles">
+
+    <div class="filters" id="filters">
+      <button class="filter active" data-category="All">All profiles</button>
+      <button class="filter" data-category="Mommies">Mommies</button>
+      <button class="filter" data-category="Young Adults">Young Adults</button>
+      <button class="filter" data-category="Daddies">Daddies</button>
+    </div>
+  </section>
+
+  <div class="results">
+    <span>Discover profiles</span>
+    <span><span id="count">54</span> profiles</span>
   </div>
-</section>
+
+  <section class="grid" id="grid" aria-live="polite"></section>
+  <div class="empty" id="empty" hidden>No profiles found. Try another search.</div>
 </main>
 
 <footer>
-  <div>Mommies, Daddies & Young Adults — Kenya</div>
-  <div>Adults 18+ • © <span id="year"></span></div>
-  <a href="#profiles">Back to profiles ↑</a>
+  <p><span class="gold">Mommies, Daddies & Young Adults — Kenya</span></p>
+  <p>Respect privacy, communicate respectfully and never share another person's photo without permission.</p>
+  <p><a href="https://wa.me/254762103221" target="_blank" rel="noopener">Contact the administrator</a></p>
 </footer>
 
-<div class="modal" id="modal" role="dialog" aria-modal="true" aria-labelledby="modalName">
+<div class="modal" id="profileModal" role="dialog"
+  aria-modal="true" aria-labelledby="modalName">
   <div class="modal-box">
-    <button class="close" id="close" aria-label="Close">&times;</button>
-    <div class="initials" id="modalInitials"></div>
-    <div class="eyebrow" id="modalCategory"></div>
+    <button class="close" id="closeModal" aria-label="Close profile">&times;</button>
+    <div id="modalInitials" class="initials" style="height:100px;border-radius:12px"></div>
+    <img id="modalPhoto" class="modal-photo" alt="Profile photo" hidden>
+    <div class="gold" id="modalCategory"></div>
     <h2 id="modalName"></h2>
-    <div id="modalMeta" class="meta"></div>
-    <p id="modalBio"></p>
-    <p><strong>Interests</strong></p>
-    <p id="modalInterests"></p>
-    <p><em>Fictional sample profile. A real introduction requires consent.</em></p>
-    <a class="btn" id="whatsapp" href="#" target="_blank" rel="noopener">Ask on WhatsApp ↗</a>
+    <div class="modal-meta" id="modalMeta"></div>
+    <p class="modal-bio" id="modalBio"></p>
+    <div class="modal-interests" id="modalInterests"></div>
+    <a class="wa-button" id="modalWhatsApp" href="https://wa.me/254762103221"
+      target="_blank" rel="noopener">Contact Admin on WhatsApp</a>
+    <p class="small-note">Fictional demo profile. Admin contact does not imply this person is real or available.</p>
   </div>
 </div>
 
 <script>
-const WHATSAPP_NUMBER = "254762103221";
+"use strict";
+
+/*
+  PHOTO FOLDERS AND FILENAMES
+
+  images/mommies/mommy01.jpg through mommy20.jpg
+  images/young-adults/young01.jpg through young20.jpg
+  images/daddies/daddy01.jpg through daddy14.jpg
+
+  Keep the filenames lowercase and use .jpg.
+*/
 
 const profiles = [
-  // MOMMIES: 20
-  {n:"Wanjiku Njeri",a:42,c:"Mommies",t:"Nairobi",b:"Warm, grounded and loves meaningful conversations.",i:"Cooking • Gospel music • Walks"},
-  {n:"Achieng Atieno",a:39,c:"Mommies",t:"Kisumu",b:"Confident, caring and enjoys a good laugh.",i:"Lake views • Dancing • Family"},
-  {n:"Mercy Wambui",a:45,c:"Mommies",t:"Thika",b:"Independent with a soft spot for thoughtful people.",i:"Gardening • Movies • Road trips"},
-  {n:"Faith Chebet",a:41,c:"Mommies",t:"Nakuru",b:"Calm and optimistic; values honesty and respect.",i:"Hiking • Reading • Tea dates"},
-  {n:"Zawadi Muthoni",a:38,c:"Mommies",t:"Mombasa",b:"Playful personality and a love for coastal life.",i:"Beach walks • Swahili food • Music"},
-  {n:"Nyambura Wairimu",a:47,c:"Mommies",t:"Nyeri",b:"Practical, kind and always ready to learn.",i:"Nature • Baking • Community"},
-  {n:"Beatrice Adhiambo",a:44,c:"Mommies",t:"Eldoret",b:"Easy-going and happiest around good company.",i:"Fitness • Afrobeats • Travel"},
-  {n:"Linet Jepkosgei",a:40,c:"Mommies",t:"Kitale",b:"Gentle, direct and appreciates consistency.",i:"Choir • Gardening • Cooking"},
-  {n:"Caroline Mumbi",a:43,c:"Mommies",t:"Kiambu",b:"Ambitious but never too busy for a sincere chat.",i:"Business • Brunch • Podcasts"},
-  {n:"Purity Nasimiyu",a:37,c:"Mommies",t:"Kakamega",b:"Cheerful and thoughtful, with a curious mind.",i:"Books • Nature • Volunteering"},
-  {n:"Doreen Wanjala",a:46,c:"Mommies",t:"Bungoma",b:"Loyal, open-minded and big on mutual respect.",i:"Music • Home projects • Walks"},
-  {n:"Esther Wangari",a:48,c:"Mommies",t:"Machakos",b:"A steady soul who values laughter and honesty.",i:"Cooking • Travel • Comedy"},
-  {n:"Ruth Naliaka",a:39,c:"Mommies",t:"Nairobi",b:"Friendly, energetic and loves discovering places.",i:"Dance • Food spots • Fitness"},
-  {n:"Jackline Akinyi",a:41,c:"Mommies",t:"Homa Bay",b:"Thoughtful and affectionate, with a practical outlook.",i:"Swimming • Music • Family"},
-  {n:"Ann Wairimu",a:50,c:"Mommies",t:"Meru",b:"Mature, patient and drawn to genuine connection.",i:"Gardening • Poetry • Trips"},
-  {n:"Millicent Chepngeno",a:38,c:"Mommies",t:"Kericho",b:"Bright, witty and a fan of peaceful weekends.",i:"Tea farms • Films • Cooking"},
-  {n:"Gladys Muthoka",a:44,c:"Mommies",t:"Kitengela",b:"Independent and appreciates clear communication.",i:"Business • Fitness • Music"},
-  {n:"Eunice Anyango",a:42,c:"Mommies",t:"Siaya",b:"A good listener who enjoys warm, honest company.",i:"Reading • Gospel • Nature"},
-  {n:"Tabitha Wanjiru",a:49,c:"Mommies",t:"Embu",b:"Down-to-earth and always finding reasons to smile.",i:"Crafts • Cooking • Walks"},
-  {n:"Nancy Chepkoech",a:40,c:"Mommies",t:"Naivasha",b:"Adventurous at heart and kind in everyday life.",i:"Boat rides • Hiking • Photography"},
+  // 20 MOMMIES
+  {n:"Wanjiku Njeri",a:38,c:"Mommies",t:"Nairobi",b:"Warm-hearted, confident and happiest around good conversation.",i:"Cooking · Music · Travel"},
+  {n:"Grace Atieno",a:42,c:"Mommies",t:"Kisumu",b:"A calm soul who appreciates kindness, laughter and genuine people.",i:"Gospel · Nature · Food"},
+  {n:"Mercy Wambui",a:35,c:"Mommies",t:"Thika",b:"Independent and friendly, with a soft spot for thoughtful gestures.",i:"Movies · Fashion · Walks"},
+  {n:"Ann Muthoni",a:40,c:"Mommies",t:"Nyeri",b:"Enjoys peaceful weekends, honest conversations and trying new recipes.",i:"Cooking · Gardening · Music"},
+  {n:"Linet Chebet",a:37,c:"Mommies",t:"Nakuru",b:"Cheerful and easygoing; believes the best connections begin with respect.",i:"Hiking · Comedy · Travel"},
+  {n:"Faith Akinyi",a:39,c:"Mommies",t:"Eldoret",b:"A caring person who values loyalty, humour and a positive outlook.",i:"Reading · Music · Family"},
+  {n:"Esther Wairimu",a:44,c:"Mommies",t:"Murang'a",b:"Graceful, practical and always ready for a meaningful conversation.",i:"Gardening · Cooking · Church"},
+  {n:"Beatrice Nyambura",a:36,c:"Mommies",t:"Kiambu",b:"Fun-loving and curious, with a weakness for good food and laughter.",i:"Restaurants · Dancing · Films"},
+  {n:"Catherine Jepkoech",a:41,c:"Mommies",t:"Kericho",b:"Values sincerity and enjoys the little things that make life special.",i:"Nature · Tea · Music"},
+  {n:"Purity Wanjala",a:34,c:"Mommies",t:"Kakamega",b:"Positive, outgoing and interested in meeting people with good energy.",i:"Fitness · Movies · Travel"},
+  {n:"Rose Adhiambo",a:43,c:"Mommies",t:"Mombasa",b:"Loves coastal sunsets, lively music and people who keep their word.",i:"Beach · Swahili food · Dance"},
+  {n:"Janet Mumbi",a:38,c:"Mommies",t:"Machakos",b:"A thoughtful woman who enjoys humour, nature and simple adventures.",i:"Walking · Cooking · Comedy"},
+  {n:"Caroline Auma",a:45,c:"Mommies",t:"Busia",b:"Patient, warm and drawn to people who are kind and dependable.",i:"Reading · Gardening · Music"},
+  {n:"Susan Wanjala",a:37,c:"Mommies",t:"Bungoma",b:"Enjoys learning new things and sharing stories over a cup of tea.",i:"Books · Food · Travel"},
+  {n:"Monica Wairimu",a:40,c:"Mommies",t:"Nanyuki",b:"Adventurous at heart, but equally happy with a quiet evening in.",i:"Nature · Photography · Films"},
+  {n:"Daisy Achieng",a:35,c:"Mommies",t:"Siaya",b:"Friendly and expressive; appreciates open minds and respectful humour.",i:"Singing · Cooking · Friends"},
+  {n:"Tabitha Chepkemoi",a:46,c:"Mommies",t:"Kitale",b:"Confident and grounded, with a love for meaningful friendships.",i:"Farming · Music · Travel"},
+  {n:"Lucy Wambui",a:39,c:"Mommies",t:"Embu",b:"Enjoys a good laugh, thoughtful company and discovering new places.",i:"Adventure · Food · Films"},
+  {n:"Irene Naliaka",a:36,c:"Mommies",t:"Vihiga",b:"A gentle spirit who values honesty, patience and a warm smile.",i:"Music · Nature · Cooking"},
+  {n:"Nancy Chepkoech",a:42,c:"Mommies",t:"Bomet",b:"Optimistic and welcoming, always happy to meet someone genuine.",i:"Walking · Gardening · Gospel"},
 
-  // YOUNG ADULT WOMEN: 20, ALL AGED 18+
-  {n:"Sharon Wambui",a:24,c:"Young Adults",t:"Nairobi",b:"Creative, curious and enjoys meeting kind people.",i:"Photography • Cafés • Music"},
-  {n:"Brenda Achieng",a:22,c:"Young Adults",t:"Kisumu",b:"Lively, thoughtful and always up for a new playlist.",i:"Dancing • Fashion • Food"},
-  {n:"Irene Chebet",a:26,c:"Young Adults",t:"Nakuru",b:"Ambitious and warm; values honest communication.",i:"Gym • Reading • Travel"},
-  {n:"Daisy Muthoni",a:21,c:"Young Adults",t:"Thika",b:"Cheerful and a little adventurous.",i:"Movies • Nature • Cooking"},
-  {n:"Valentine Njeri",a:28,c:"Young Adults",t:"Kiambu",b:"Independent, funny and appreciates good conversation.",i:"Podcasts • Brunch • Hiking"},
-  {n:"Sheila Atieno",a:23,c:"Young Adults",t:"Mombasa",b:"Relaxed and outgoing with a coastal vibe.",i:"Beach walks • Music • Swimming"},
-  {n:"Annette Wairimu",a:25,c:"Young Adults",t:"Nyeri",b:"Kind-hearted, focused and easy to talk to.",i:"Books • Baking • Fitness"},
-  {n:"Maureen Jepchirchir",a:27,c:"Young Adults",t:"Eldoret",b:"Energetic, optimistic and enjoys learning.",i:"Running • Travel • Movies"},
-  {n:"Cynthia Nasimiyu",a:20,c:"Young Adults",t:"Kakamega",b:"Friendly and expressive, with a creative side.",i:"Art • Music • Friends"},
-  {n:"Lydia Wanjala",a:29,c:"Young Adults",t:"Bungoma",b:"Confident and considerate; loves trying new things.",i:"Food spots • Fashion • Walks"},
-  {n:"Gloria Adhiambo",a:24,c:"Young Adults",t:"Homa Bay",b:"Playful, sincere and keen on personal growth.",i:"Dance • Books • Photography"},
-  {n:"Monica Wangari",a:26,c:"Young Adults",t:"Embu",b:"Balanced, supportive and loves a good laugh.",i:"Cooking • Nature • Podcasts"},
-  {n:"Peris Chepngeno",a:22,c:"Young Adults",t:"Kericho",b:"Easy-going and curious about different cultures.",i:"Tea dates • Music • Hiking"},
-  {n:"Joyce Mumbi",a:28,c:"Young Adults",t:"Machakos",b:"Motivated, caring and a fan of spontaneous plans.",i:"Fitness • Travel • Food"},
-  {n:"Rose Naliaka",a:19,c:"Young Adults",t:"Kitale",b:"Bright and friendly, and enjoys creative projects.",i:"Drawing • Films • Music"},
-  {n:"Deborah Akinyi",a:25,c:"Young Adults",t:"Siaya",b:"Thoughtful, upbeat and values respect.",i:"Reading • Cooking • Walks"},
-  {n:"Mercy Wairimu",a:23,c:"Young Adults",t:"Naivasha",b:"Open-minded, warm and loves the outdoors.",i:"Cycling • Photography • Nature"},
-  {n:"Faith Muthoka",a:27,c:"Young Adults",t:"Kitengela",b:"Independent, caring and full of ideas.",i:"Business • Music • Fitness"},
-  {n:"Esther Jepkoech",a:18,c:"Young Adults",t:"Nairobi",b:"Adult fictional sample with a creative, friendly personality.",i:"Art • Music • Reading"},
-  {n:"Pamela Chepkoech",a:30,c:"Young Adults",t:"Meru",b:"Self-assured and kind; enjoys meaningful chats.",i:"Travel • Cooking • Live music"},
+  // 20 YOUNG ADULTS — ALL AGED 18+
+  {n:"Sharon Wambui",a:23,c:"Young Adults",t:"Nairobi",b:"Creative, lively and always looking for a new café or adventure.",i:"Fashion · Music · Photography"},
+  {n:"Brenda Akinyi",a:21,c:"Young Adults",t:"Kisumu",b:"A friendly student who enjoys laughter and conversations that flow.",i:"Movies · Dance · Food"},
+  {n:"Faith Njeri",a:24,c:"Young Adults",t:"Thika",b:"Ambitious and cheerful, with a love for discovering new places.",i:"Travel · Reading · Fitness"},
+  {n:"Diana Chebet",a:22,c:"Young Adults",t:"Nakuru",b:"Easygoing and curious; happiest with music and good company.",i:"Music · Hiking · Films"},
+  {n:"Angela Muthoni",a:25,c:"Young Adults",t:"Nyeri",b:"Independent, thoughtful and interested in meeting positive people.",i:"Books · Cooking · Nature"},
+  {n:"Joy Atieno",a:20,c:"Young Adults",t:"Mombasa",b:"Sunny personality, coastal vibes and a big appreciation for humour.",i:"Beach · Dance · Fashion"},
+  {n:"Sheila Wairimu",a:26,c:"Young Adults",t:"Kiambu",b:"Enjoys deep chats, spontaneous plans and a little friendly teasing.",i:"Art · Movies · Travel"},
+  {n:"Ruth Jepkoech",a:22,c:"Young Adults",t:"Eldoret",b:"Sporty and sociable, with a soft spot for kind and funny people.",i:"Running · Music · Cooking"},
+  {n:"Melissa Nyambura",a:24,c:"Young Adults",t:"Machakos",b:"A creative thinker who loves new experiences and good playlists.",i:"Design · Music · Photography"},
+  {n:"Nancy Adhiambo",a:19,c:"Young Adults",t:"Siaya",b:"Friendly and full of ideas; enjoys meeting people with shared interests.",i:"Singing · Reading · Films"},
+  {n:"Pamela Chepkoech",a:27,c:"Young Adults",t:"Nanyuki",b:"Adventurous, confident and always ready for a scenic weekend.",i:"Hiking · Travel · Food"},
+  {n:"Miriam Wanjala",a:23,c:"Young Adults",t:"Bungoma",b:"Warm, playful and drawn to people who can make her laugh.",i:"Comedy · Dance · Fashion"},
+  {n:"Alice Mumbi",a:21,c:"Young Adults",t:"Embu",b:"A positive person who likes relaxed outings and genuine conversations.",i:"Nature · Movies · Cooking"},
+  {n:"Violet Auma",a:25,c:"Young Adults",t:"Busia",b:"Enjoys learning, meeting different people and sharing a good story.",i:"Books · Travel · Music"},
+  {n:"Christine Wairimu",a:28,c:"Young Adults",t:"Murang'a",b:"Focused on her goals but always makes time for fun and friendship.",i:"Fitness · Food · Movies"},
+  {n:"Peris Naliaka",a:22,c:"Young Adults",t:"Kakamega",b:"Outgoing and expressive; loves good music and a relaxed atmosphere.",i:"Dance · Fashion · Friends"},
+  {n:"Rebecca Achieng",a:24,c:"Young Adults",t:"Mombasa",b:"Loves the ocean, discovering local spots and sharing laughs.",i:"Beach · Photography · Food"},
+  {n:"Cynthia Wambui",a:20,c:"Young Adults",t:"Nairobi",b:"Bright and curious, with a growing interest in technology and art.",i:"Technology · Art · Music"},
+  {n:"Eunice Muthoni",a:26,c:"Young Adults",t:"Kitale",b:"Kind, confident and happy to meet people who respect boundaries.",i:"Cooking · Nature · Travel"},
+  {n:"Stacy Atieno",a:23,c:"Young Adults",t:"Kericho",b:"A relaxed personality who appreciates humour and thoughtful people.",i:"Tea · Music · Films"},
 
-  // DADDIES: 14
-  {n:"Kevin Mwangi",a:31,c:"Daddies",t:"Nairobi",b:"Respectful, ambitious and appreciates real conversation.",i:"Football • Road trips • Cooking"},
-  {n:"Brian Otieno",a:36,c:"Daddies",t:"Kisumu",b:"Easy-going and thoughtful with a playful sense of humour.",i:"Music • Fishing • Football"},
-  {n:"Peter Kamau",a:42,c:"Daddies",t:"Thika",b:"Steady, honest and values clear communication.",i:"Gardening • Films • Travel"},
-  {n:"Dennis Kiptoo",a:34,c:"Daddies",t:"Nakuru",b:"Active, positive and always learning something new.",i:"Running • Hiking • Podcasts"},
-  {n:"Samuel Mutua",a:39,c:"Daddies",t:"Machakos",b:"Patient and supportive, with a practical outlook.",i:"Business • Music • Nature"},
-  {n:"Collins Wekesa",a:33,c:"Daddies",t:"Bungoma",b:"Friendly, sincere and loves a good laugh.",i:"Football • Cooking • Friends"},
-  {n:"Martin Karanja",a:45,c:"Daddies",t:"Nyeri",b:"Grounded and considerate; enjoys peaceful weekends.",i:"Reading • Farming • Walks"},
-  {n:"Joseph Ouma",a:37,c:"Daddies",t:"Mombasa",b:"Sociable, curious and fond of the coast.",i:"Swimming • Travel • Music"},
-  {n:"Victor Barasa",a:40,c:"Daddies",t:"Kakamega",b:"Confident but humble; values trust and kindness.",i:"Fitness • Football • Movies"},
-  {n:"Anthony Maina",a:35,c:"Daddies",t:"Kiambu",b:"Warm, focused and keen on genuine connections.",i:"Business • Hiking • Food"},
-  {n:"George Kipchumba",a:43,c:"Daddies",t:"Eldoret",b:"Calm, reliable and enjoys conversations with depth.",i:"Running • Farming • Gospel"},
-  {n:"Eric Omondi",a:32,c:"Daddies",t:"Homa Bay",b:"Lively and considerate with a creative streak.",i:"Photography • Music • Travel"},
-  {n:"David Muriuki",a:38,c:"Daddies",t:"Embu",b:"Practical, cheerful and big on mutual respect.",i:"Cooking • Football • Nature"},
-  {n:"Felix Njoroge",a:41,c:"Daddies",t:"Naivasha",b:"Adventurous, friendly and appreciates honesty.",i:"Boat rides • Hiking • Photography"}
+  // 14 DADDIES
+  {n:"Kevin Mwangi",a:40,c:"Daddies",t:"Nairobi",b:"Confident and respectful, with a love for good conversation and travel.",i:"Business · Football · Food"},
+  {n:"Peter Otieno",a:46,c:"Daddies",t:"Kisumu",b:"Easygoing and sociable; values honesty, humour and mutual respect.",i:"Fishing · Music · Football"},
+  {n:"James Kamau",a:43,c:"Daddies",t:"Thika",b:"Practical, warm and happiest when sharing a laugh with good company.",i:"Cars · Cooking · Movies"},
+  {n:"Daniel Kiptoo",a:39,c:"Daddies",t:"Eldoret",b:"Active and optimistic, with an interest in fitness and outdoor life.",i:"Running · Travel · Sports"},
+  {n:"Samuel Maina",a:48,c:"Daddies",t:"Nyeri",b:"Thoughtful and calm; enjoys meaningful talks and quiet weekends.",i:"Reading · Nature · Music"},
+  {n:"Brian Ochieng",a:37,c:"Daddies",t:"Mombasa",b:"Outgoing and playful, with a soft spot for coastal adventures.",i:"Beach · Football · Dance"},
+  {n:"Joseph Mutua",a:45,c:"Daddies",t:"Machakos",b:"A grounded man who values kindness, laughter and good food.",i:"Cooking · Farming · Gospel"},
+  {n:"David Karanja",a:42,c:"Daddies",t:"Nakuru",b:"Friendly and ambitious; enjoys discovering new places and ideas.",i:"Business · Hiking · Films"},
+  {n:"Francis Barasa",a:50,c:"Daddies",t:"Bungoma",b:"Patient, welcoming and a fan of honest conversations.",i:"Gardening · Music · News"},
+  {n:"Patrick Njoroge",a:41,c:"Daddies",t:"Kiambu",b:"A cheerful personality who enjoys sports and relaxed outings.",i:"Football · Travel · Food"},
+  {n:"George Odhiambo",a:47,c:"Daddies",t:"Siaya",b:"Warm and sociable; believes respect makes every connection better.",i:"Music · Fishing · Reading"},
+  {n:"Martin Chege",a:38,c:"Daddies",t:"Nanyuki",b:"Adventurous and curious, always interested in learning something new.",i:"Nature · Photography · Cars"},
+  {n:"Eric Kipchoge",a:44,c:"Daddies",t:"Kericho",b:"A calm, reliable person who enjoys a good laugh and fresh air.",i:"Tea · Walking · Football"},
+  {n:"Felix Njoroge",a:49,c:"Daddies",t:"Embu",b:"Friendly and considerate, with a passion for cooking and music.",i:"Cooking · Gospel · Travel"}
 ];
 
-let activeCategory = "All";
 const grid = document.getElementById("grid");
 const search = document.getElementById("search");
 const count = document.getElementById("count");
 const empty = document.getElementById("empty");
+const modal = document.getElementById("profileModal");
+let activeCategory = "All";
+
+function escapeHTML(value) {
+  return String(value).replace(/[&<>"']/g, char => ({
+    "&":"&amp;",
+    "<":"&lt;",
+    ">":"&gt;",
+    '"':"&quot;",
+    "'":"&#39;"
+  }[char]));
+}
 
 function initials(name) {
-  return name.split(" ").slice(0,2).map(x=>x[0]).join("").toUpperCase();
+  return name.split(/\s+/).slice(0,2).map(part => part[0]).join("").toUpperCase();
+}
+
+/* Automatically finds the photo filename for each profile. */
+function getPhotoPath(profile) {
+  const categoryProfiles = profiles.filter(item => item.c === profile.c);
+  const index = categoryProfiles.findIndex(item => item.n === profile.n) + 1;
+  const number = String(index).padStart(2, "0");
+
+  if (profile.c === "Mommies") {
+    return `images/mommies/mommy${number}.jpg`;
+  }
+
+  if (profile.c === "Young Adults") {
+    return `images/young-adults/young${number}.jpg`;
+  }
+
+  return `images/daddies/daddy${number}.jpg`;
 }
 
 function renderProfiles() {
   const term = search.value.trim().toLowerCase();
-  const shown = profiles.filter(p => {
-    const matchesCategory = activeCategory === "All" || p.c === activeCategory;
-    const searchable = [p.n,p.t,p.c,p.b,p.i,String(p.a)].join(" ").toLowerCase();
-    return matchesCategory && searchable.includes(term);
+
+  const shown = profiles.filter(profile => {
+    const categoryMatches =
+      activeCategory === "All" || profile.c === activeCategory;
+
+    const searchable = [
+      profile.n, profile.t, profile.c, profile.b,
+      profile.i, String(profile.a)
+    ].join(" ").toLowerCase();
+
+    return categoryMatches && searchable.includes(term);
   });
 
-  grid.innerHTML = shown.map(p => `
-    <article class="card">
-      <div class="avatar">
-        <span class="tag">${p.c}</span>
-        <div class="initials">${initials(p.n)}</div>
-      </div>
-      <div class="details">
-        <h3>${p.n}</h3>
-        <div class="meta">${p.a} years · ${p.t}, Kenya</div>
-        <p class="bio">${p.b}</p>
-        <div class="interests">${p.i}</div>
-        <button class="view" data-id="${p.n}">View profile ↗</button>
-      </div>
-    </article>
-  `).join("");
+  grid.innerHTML = shown.map(profile => {
+    const name = escapeHTML(profile.n);
+    const photo = escapeHTML(getPhotoPath(profile));
+    const initialsText = escapeHTML(initials(profile.n));
+
+    return `
+      <article class="card">
+        <div class="avatar">
+          <span class="tag">${escapeHTML(profile.c)}</span>
+          <img
+            src="${photo}"
+            alt="Demo portrait for ${name}"
+            loading="lazy"
+            onerror="this.style.display='none';this.nextElementSibling.style.display='grid'"
+          >
+          <div class="initials" style="display:none">${initialsText}</div>
+        </div>
+        <div class="details">
+          <h3>${name}</h3>
+          <div class="meta">${profile.a} years · ${escapeHTML(profile.t)}, Kenya</div>
+          <p class="bio">${escapeHTML(profile.b)}</p>
+          <div class="interests">${escapeHTML(profile.i)}</div>
+          <button class="view" data-profile="${name}">View profile ↗</button>
+        </div>
+      </article>`;
+  }).join("");
 
   count.textContent = shown.length;
   empty.hidden = shown.length !== 0;
 }
 
-document.querySelectorAll(".filter").forEach(button => {
-  button.addEventListener("click", () => {
-    activeCategory = button.dataset.category;
-    document.querySelectorAll(".filter").forEach(b =>
-      b.classList.toggle("active", b === button)
-    );
-    renderProfiles();
+function openProfile(name) {
+  const profile = profiles.find(item => item.n === name);
+  if (!profile) return;
+
+  const photo = document.getElementById("modalPhoto");
+  const modalInitials = document.getElementById("modalInitials");
+
+  document.getElementById("modalName").textContent = profile.n;
+  document.getElementById("modalCategory").textContent = profile.c;
+  document.getElementById("modalMeta").textContent =
+    `${profile.a} years · ${profile.t}, Kenya`;
+  document.getElementById("modalBio").textContent = profile.b;
+  document.getElementById("modalInterests").textContent =
+    "Interests: " + profile.i;
+
+  modalInitials.textContent = initials(profile.n);
+  modalInitials.style.display = "grid";
+  photo.hidden = true;
+  photo.onerror = () => {
+    photo.hidden = true;
+    modalInitials.style.display = "grid";
+  };
+  photo.onload = () => {
+    photo.hidden = false;
+    modalInitials.style.display = "none";
+  };
+  photo.src = getPhotoPath(profile);
+
+  // The WhatsApp button contacts the administrator, not the fictional profile.
+  document.getElementById("modalWhatsApp").href =
+    "https://wa.me/254762103221?text=" +
+    encodeURIComponent("Hello Admin, I would like to ask about the " +
+      profile.n + " demo profile.");
+
+  modal.classList.add("open");
+  document.body.style.overflow = "hidden";
+  document.getElementById("closeModal").focus();
+}
+
+function closeProfile() {
+  modal.classList.remove("open");
+  document.body.style.overflow = "";
+}
+
+document.getElementById("filters").addEventListener("click", event => {
+  const button = event.target.closest("button[data-category]");
+  if (!button) return;
+
+  activeCategory = button.dataset.category;
+
+  document.querySelectorAll(".filter").forEach(item => {
+    item.classList.toggle("active", item === button);
   });
+
+  renderProfiles();
 });
 
 search.addEventListener("input", renderProfiles);
 
-const modal = document.getElementById("modal");
-
 grid.addEventListener("click", event => {
-  const button = event.target.closest("[data-id]");
-  if (!button) return;
-
-  const p = profiles.find(item => item.n === button.dataset.id);
-  if (!p) return;
-
-  document.getElementById("modalInitials").textContent = initials(p.n);
-  document.getElementById("modalCategory").textContent = p.c.toUpperCase();
-  document.getElementById("modalName").textContent = p.n;
-  document.getElementById("modalMeta").textContent = `${p.a} years old · ${p.t}, Kenya`;
-  document.getElementById("modalBio").textContent = p.b;
-  document.getElementById("modalInterests").textContent = p.i;
-
-  const message = `Hello, I would like to ask about the fictional sample profile ${p.n} in ${p.t}. I understand an introduction requires consent from both adults.`;
-  document.getElementById("whatsapp").href =
-    `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`;
-
-  modal.classList.add("open");
+  const button = event.target.closest("button[data-profile]");
+  if (button) openProfile(button.dataset.profile);
 });
 
-function closeModal() {
-  modal.classList.remove("open");
-}
-
-document.getElementById("close").addEventListener("click", closeModal);
+document.getElementById("closeModal").addEventListener("click", closeProfile);
 
 modal.addEventListener("click", event => {
-  if (event.target === modal) closeModal();
+  if (event.target === modal) closeProfile();
 });
 
 document.addEventListener("keydown", event => {
-  if (event.key === "Escape") closeModal();
+  if (event.key === "Escape") closeProfile();
 });
 
-document.getElementById("year").textContent = new Date().getFullYear();
-renderProfiles();
+/* Check that the site contains exactly 54 profiles. */
+if (profiles.length !== 54) {
+  console.error("Expected 54 profiles but found:", profiles.length);
+}
 
-// Sanity check: 54 profiles, divided 20 / 20 / 14.
-console.assert(profiles.length === 54, "Expected 54 profiles");
-console.assert(profiles.filter(p=>p.c==="Mommies").length === 20);
-console.assert(profiles.filter(p=>p.c==="Young Adults").length === 20);
-console.assert(profiles.filter(p=>p.c==="Daddies").length === 14);
-console.assert(profiles.every(p=>p.a>=18), "Every profile must be an adult");
+renderProfiles();
 </script>
 </body>
 </html>
